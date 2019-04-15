@@ -6,8 +6,8 @@ fn main() {
 
 fn place(piece: char, board: &mut Vec<char>) {
   let already_blocked_cells: Vec<usize> = blocked_cells(piece, board.to_vec());
-  let an_empty_cell = next_empty_cell(already_blocked_cells);
-  board[an_empty_cell] = piece;
+  let available_cell = next_available_cell(already_blocked_cells);
+  board[available_cell] = piece;
 }
 
 fn blocked_cells(piece: char, board: Vec<char>) -> Vec<usize>  {
@@ -42,7 +42,7 @@ fn another_king_adjacent(piece: char, cell_index: usize, maybe_another_king: Opt
 
 }
 
-fn next_empty_cell(blocked_cells: Vec<usize>) -> usize {
+fn next_available_cell(blocked_cells: Vec<usize>) -> usize {
   let mut rng = thread_rng();
   loop {
     let next_random_cell = rng.gen_range(0, 63);
@@ -60,8 +60,7 @@ mod tests {
   fn it_adds_piece_to_an_empty_board() {
     let mut board = board();
     place('K', &mut board);
-    let expected = vec!['K'];
-    assert_eq!(only_pieces(board), expected);
+    assert_eq!(only_pieces(board), vec!['K']);
   }
 
   #[test]
