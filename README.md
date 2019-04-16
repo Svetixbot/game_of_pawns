@@ -1,5 +1,7 @@
 # SHOKUNIN 2019 April Challenge: Game of Pawns
 
+![rust](https://www.rust-lang.org/static/images/rust-logo-blk.svg)
+
 ## Purpose
 
 Generate a random chess position as an 8x8 grid or in FEN format. The position does not have to be realistic, but it must follow these rules:
