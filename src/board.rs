@@ -20,7 +20,7 @@ fn blocked_cells(piece: char, board: Vec<char>) -> Vec<usize>  {
 
 fn pawn_in_the_promotion_square(piece: char, cell_index: usize) -> bool {
   let promotion_square = vec![0,1,2,3,4,5,6,7,56,57,58,59,60,61,62,63];
-  piece == 'p' && promotion_square.contains(&cell_index)
+  (piece == 'p' || piece == 'P') && promotion_square.contains(&cell_index)
 }
 
 fn another_king_adjacent(piece: char, cell_index: usize, maybe_another_king: Option<usize>) -> bool {
