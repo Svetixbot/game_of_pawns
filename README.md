@@ -12,6 +12,14 @@ Generate a random chess position as an 8x8 grid or in FEN format. The position d
  - including the kings, up to 32 pieces of either color can be placed. There is no requirement for material balance between sides, but the picking of pieces should comply with what is found in a regular chess set (e.g., 8 pawns/colour, 1 queen/colour, etc)
  - (FEN requirement only) it is white's turn, both sides have lost castling rights and there is no possibility for en passant (the FEN should thus end in w - - 0 1)
 
+## Assumptions
+1.
+` - the kings must not be placed on adjacent squares`
+ If the kings are never placed -/+ 10 cells around each other, it's ok.
+2.
+Acceptable command-line arguments:
+`--grid` - will output a board in a 8x8 grid format
+`all the other input or the absence of it` - will output a board in a fen format
 
 ## How to run (please check `Prerequisites`)
 
