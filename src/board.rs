@@ -3,11 +3,19 @@ use rand::prelude::*;
 const EMPTY: char = '.';
 static PROMOTION_SQUARE: [usize; 16] = [0,1,2,3,4,5,6,7,56,57,58,59,60,61,62,63];
 
-pub fn empty_board() -> Vec<char> {
+pub fn place_all(pieces: Vec<char>) -> Vec<char> {
+  let mut board = empty_board();
+  for piece in pieces {
+    place(piece, &mut board);
+  }
+  board
+}
+
+fn empty_board() -> Vec<char> {
   (0..64).map(|_| EMPTY).collect()
 }
 
-pub fn place(piece: char, board: &mut Vec<char>) {
+fn place(piece: char, board: &mut Vec<char>) {
   let already_blocked_cells: Vec<usize> = blocked_cells(piece, board.to_vec());
   let available_cell = next_available_cell(already_blocked_cells);
   board[available_cell] = piece;

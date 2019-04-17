@@ -13,10 +13,12 @@ Generate a random chess position as an 8x8 grid or in FEN format. The position d
  - (FEN requirement only) it is white's turn, both sides have lost castling rights and there is no possibility for en passant (the FEN should thus end in w - - 0 1)
 
 ## Assumptions
-1.
+
+### 1
 ` - the kings must not be placed on adjacent squares`
  If the kings are never placed -/+ 10 cells around each other, it's ok.
-2.
+
+### 2
 Acceptable command-line arguments:
 `--grid` - will output a board in a 8x8 grid format
 `all the other input or the absence of it` - will output a board in a fen format
