@@ -3,19 +3,19 @@ use rand::thread_rng;
 use rand::seq::SliceRandom;
 use rand::prelude::*;
 
-const WHITE_KING: char = 'K';
-const WHITE_QUEEN: char = 'Q';
-const WHITE_BISHOP: char = 'B';
-const WHITE_KNIGHT: char = 'N';
-const WHITE_ROOK: char = 'R';
-const WHITE_PAWN: char = 'P';
+pub const WHITE_KING: char = 'K';
+pub const WHITE_QUEEN: char = 'Q';
+pub const WHITE_BISHOP: char = 'B';
+pub const WHITE_KNIGHT: char = 'N';
+pub const WHITE_ROOK: char = 'R';
+pub const WHITE_PAWN: char = 'P';
 
-const BLACK_KING: char = 'k';
-const BLACK_QUEEN: char = 'q';
-const BLACK_BISHOP: char = 'b';
-const BLACK_KNIGHT: char = 'n';
-const BLACK_ROOK: char = 'r';
-const BLACK_PAWN: char = 'p';
+pub const BLACK_KING: char = 'k';
+pub const BLACK_QUEEN: char = 'q';
+pub const BLACK_BISHOP: char = 'b';
+pub const BLACK_KNIGHT: char = 'n';
+pub const BLACK_ROOK: char = 'r';
+pub const BLACK_PAWN: char = 'p';
 
 const KINGS: [char; 2] = [WHITE_KING, BLACK_KING];
 const ALL_PIECES: [char; 30] =
